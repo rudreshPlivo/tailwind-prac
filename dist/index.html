@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <title>TW</title>
+</head>
+<body class="font-Dmsans">
+    <!-- -->
+    <header>
+        <nav class="container flex items-center py-4 mt-4">
+            <div><p class="text-red-600">Welcome to Messageetc</p></div>
+            <ul class="hidden sm:flex flex-1 justify-end items-center gap-12 text-blue-500 uppercase text-xs">
+                <li class="cursor-pointer"><span>Whatsapp Credits:</span><span class="ml-2">1000000</span></li>
+                <li class="cursor-pointer"><span>SMS Credits:</span><span class="ml-2">9999999</span></li>
+                <button type="button" class="bg-red-500 text-slate-200 rounded-md px-7 py-3 uppercase">Logout</button>
+            </ul>
+            <div class="flex sm:hidden flex-1 justify-end"><i class="text-2xl fa-solid fa-bars"></i></div>
+        </nav>
+    </header>
+    <div class="app-body flex flex-row h-screen mt-4">
+        <ul class="hidden sm:flex flex-col items-start gap-4 bg-red-400 py-8 px-4">
+            <li class="cursor-pointer text-white hover:text-gray-300 active:text-gray-800"><a href="#"><span>Whatsapp Messages</span></a></li>
+            <li class="cursor-pointer text-white hover:text-gray-300 active:text-gray-800"><a href="#"><span>SMS Messages</span></a></li>
+            <li class="cursor-pointer text-white hover:text-gray-300 active:text-gray-800"><a href="#"><span>Report</span></a></li>
+        </ul>
+        <div class="bg-sky-100 flex flex-col flex-1 uppercase">
+            <h2 class="text-red-500 text-lg tracking-wide ml-8 mt-4 mb-2">Whatsapp messages can only be sent between 9 am and 6 pm</h2>
+            <form class="flex flex-col flex-1" action="submit">
+                <!-- Campaign Details -->
+                <ul class="flex items-center my-4">
+                    <li class="flex-1 justify-start mx-8">
+                        <input class="bg-sky-100 border-b-2 border-b-red-500 text-lg caret-red-500 text-red-500 placeholder:text-red-500" type="text" placeholder="Enter Campaign Name" required>
+                    </li>
+                    <li class="justify-end mx-16">
+                        <div class="inline-block relative after:absolute after:content-['▼'] text-lg">
+                            <select class="appearance-none bg-sky-100 border-b-2 border-b-red-500 pr-4 text-red-500" name="ctype" id="ctype">
+                                <option value="" disabled selected>Select Campaign Type</option>
+                                <option value="bulk">Bulk Messages</option>
+                                <option value="responder">Responder</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+                <!-- Message Details -->
+                <div class="flex">
+                    <textarea name="numberlist" id="phone-numbers" cols="30" rows="10" placeholder="Numbers"></textarea>
+                    <div>
+                        <p>
+                            <textarea name="text" id="msgtext" cols="30" rows="10" placeholder="Message Text"></textarea>
+                        </p>
+                        <p>
+                            <select name="filetype" id="filetype">
+                                <option value="pdf">Document - PDF</option>
+                                <option value="image">image</option>
+                                <option value="video">Video</option>
+                                <option value="other">Document - Other</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="file">Choose a file to upload</label>
+                            <input type="file" id="file" name="file">
+                            <ul id="file-list"></ul>
+                        </p>
+                        <p>
+                            <input type="text" name="file-label" id="file-label">
+                        </p>
+                    </div>
+                </div>
+                <!-- Controls -->
+                <div>
+                    <button>Save</button>
+                    <button>Cancel</button>
+                    <button>Send</button>
+                </div>
+            </form>
+        </div>
+        <div class="hidden flex-1"></div>
+    </div>
+</body>
+</html>
